@@ -11,6 +11,7 @@ public class Arm {
     private CRServo collection2 = null;
     private Servo elbow1;
     private Servo elbow2;
+    private Servo wrist;
     public Arm(HardwareMap h){
         shoulder = h.get(DcMotor.class,"shoulder");
         collection1 = h.get(CRServo.class, "collection1");
@@ -19,6 +20,8 @@ public class Arm {
         elbow1 = h.get(Servo.class, "elbow1");
         elbow2 = h.get(Servo.class, "elbow2");
         elbow2.setDirection(Servo.Direction.REVERSE);
+        wrist = h.get(Servo.class, "wirst");
+
     }
     public void setShoulder(double targetPos){
         shoulder.setPower(targetPos);

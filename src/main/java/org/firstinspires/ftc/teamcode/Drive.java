@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
-@TeleOp(name="mecanumDrive", group="Iterative Opmode")
+@TeleOp(name="Drive", group="Iterative Opmode")
 public class Drive extends OpMode
 {
     // Declare OpMode members.
