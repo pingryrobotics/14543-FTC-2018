@@ -13,6 +13,7 @@ public class Drive extends OpMode
     private Mecanum m = null;
     private Hang h = null;
     private Arm a = null;
+    private boolean buttonPressed = false;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -57,9 +58,27 @@ public class Drive extends OpMode
         else {
             a.stopCollection();
         }
-        a.setElbow(gamepad2.right_stick_y);
-        a.setShoulder(gamepad2.left_stick_y);
-        //ADD WRIST LEVELING
+        if(!buttonPressed){
+            if (gamepad1.a){
+                a.setElbow(.1);
+                buttonPressed = true;
+            }
+            else if (gamepad1.x) {
+                a.setElbow(.01);
+                buttonPressed = true;
+            }
+            else if(gamepad1.y){
+                a.setElbow(-.01);
+                buttonPressed = true;
+            }
+            else if(gamepad1.b){
+                a.setElbow(-.1);
+                buttonPressed = true;
+            }
+        }
+        else if(!(gamepad1.b||gamepad1.a||gamepad1.x||gamepad1.y)){
+            buttonPressed = false;
+        }
     }
     private void hang(){
 
