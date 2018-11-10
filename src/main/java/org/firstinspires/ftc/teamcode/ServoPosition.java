@@ -10,7 +10,7 @@ public class ServoPosition extends OpMode {
     public void init() {
         pos = .5;
         buttonPressed = false;
-        servo = hardwareMap.get(Servo.class, "servo");
+        servo = hardwareMap.get(Servo.class, "servo"); //
     }
     public void loop(){
         servo.setPosition(pos);
@@ -35,6 +35,8 @@ public class ServoPosition extends OpMode {
         else if(!(gamepad1.b||gamepad1.a||gamepad1.x||gamepad1.y)){
             buttonPressed = false;
         }
+        telemetry.addData("position: ", pos);
+        );
     }
     private void incrementPos(double inc){
         pos+=inc;
