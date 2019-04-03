@@ -9,9 +9,9 @@ public class Arm {
     private DcMotor shoulder = null;
     private CRServo collection1 = null;
     private CRServo collection2 = null;
-    private Servo elbow1;
-    private Servo elbow2; //right
-    private Servo wrist;
+    private Servo elbow1 = null;
+    private Servo elbow2 = null; //right
+    private Servo wrist = null;
     public Arm(HardwareMap h){
         shoulder = h.get(DcMotor.class,"shoulder");
         collection1 = h.get(CRServo.class, "collection1");
